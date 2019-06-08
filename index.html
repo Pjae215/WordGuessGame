@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
         
+    <header><strong>WORD GUESS GAME</strong></header>
     
-    <div class="game">
+    <br>
+    <br>
 
-            <div class="guess"></div>
-            <form class="guessForm">
-            <input type="text" class="guessLetter" maxlength="1"  placeholder="Enter a letter . . ."/> 
-            <button type="submit" class="guessButton">Guess</button>
-            </form>  
-            <p>Hint: Names of Music Artists</p>
-            <div class="wrong">
-              <div class="wrongLetters"></div>
-            </div>
-            <div class="message">
-              <h1 class="title"></h1>
-              <p class="text"></p>
-              <button class="playagainbutton">Play Again?</button></div>
-          </div>
+    <div class="guessForm"><form>
+      <input type="text" class="guessLetter" maxlength="1"  placeholder="Enter a letter . . ."/> 
+      <button type="submit" class="guessButton" id="button">Guess</button>
+      <button type="reset" class="guessButton" id="button">Play Again?</button></form></div>
+            
+    <h1> Hint: Names of Music Artists</h1>
 
+    <br>
+
+    <p id="entry"></p>
+    <div class="wrong"></div>
+    <div class="wrongLetters"></div>
+    <div class="correct"></div>
+    <div class="correctLetters"></div>
+
+        
+  <br>  
+  <br>
+    <div class="pic"></div> 
+    
     <script src="assets/javascript/game.js"> </script>
 
-     <br>  
-        <div class="pic"><img src= "https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/f3/30/a9/f330a9f6-a473-7686-ff24-0cb4c4eef352/source/512x512bb.jpg" alt= "Intro" width = 80% height= 80% /> 
-    </div> 
-
-    
 </body>
 </html>
