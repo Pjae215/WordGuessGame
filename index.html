@@ -7,31 +7,28 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-        
-    <header><strong>WORD GUESS GAME</strong></header>
+        <header><strong>WORD GUESS GAME</strong></header>
+       <hr>
+      <br>
+  <div id ="wrapper">
+    <div class= "right" id="guessForm"><form>
+        <input type="text" class="guessLetter" maxlength="1"  placeholder="Enter a letter . . ."/> 
+        <button type="submit" class="Button" id="button">Guess</button>
+        <button type="reset" class="Button" id="button">Restart</button></form></div>
+    <h1 class = "right"> Hint: Names of Music Artists</h1>
     
-    <br>
-    <br>
+    <img class= "left" src ="https://assetstorev1-prd-cdn.unity3d.com/key-image/8fb98eec-43ce-4024-ba26-918d4b24b779.jpg"/> </div>
+  </div>
 
-    <div class="guessForm"><form>
-      <input type="text" class="guessLetter" maxlength="1"  placeholder="Enter a letter . . ."/> 
-      <button type="submit" class="guessButton" id="button">Guess</button>
-      <button type="reset" class="guessButton" id="button">Play Again?</button></form></div>
-            
-    <h1> Hint: Names of Music Artists</h1>
+
 
     <br>
 
-    <p id="entry"></p>
-    <div class="wrong"></div>
-    <div class="wrongLetters"></div>
-    <div class="correct"></div>
-    <div class="correctLetters"></div>
-
-        
-  <br>  
-  <br>
-    <div class="pic"></div> 
+    <!-- <p class="right"   id="entry"></p>
+    <div class="right" id="wrong"></div>
+    <div class="right" id="wrongLetters"></div>
+    <div class="right" id="correct"></div>
+    <div class="right" id="correctLetters"></div>  -->
     
     <script src="assets/javascript/game.js"> </script>
 
