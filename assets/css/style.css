@@ -1,14 +1,10 @@
-html{
-  background-color: navy;
+
+body{
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+
 }
 
-/* .pic {
- /**background-image: url("https://assetstorev1-prd-cdn.unity3d.com/key-image/8fb98eec-43ce-4024-ba26-918d4b24b779.jpg");
-  
-}
-**/
 header {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 60px;
   left: 0;
   width: 100%;
@@ -17,55 +13,16 @@ header {
   color: white;
  }
 
- /* #guessform{
-  width: 40%;
-  align-content: center;
-  font-family: Arial, Helvetica, sans-serif; */
+ h2{
+  font-weight: bolder;
+  text-align:left; 
+  padding-top: 1em
 
-.left{
-  width: 25%;
-  float: left;
+ }
+
+h3 {
+  text-align: center; 
+  font-weight: bolder;
 }
-.right{
-  width: 65%;
-  float: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-}
-.Button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  cursor: pointer;
-  background: white;
-  color:navy;
-}
- .guessLetter {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  cursor: pointer;
-  background: white;
-  color: black;
-  padding: 0%;
-}
-/*
-.correct{
-  display: inline-block;
-  font-size: 30px;
-  padding: 10px;
-  text-transform: lowercase;
-}
-.correctLetters{
-  display: inline-block;
-  font-size: 30px;
-  padding: 10px;
-  text-transform: lowercase;
-}
-.entry {
-  display: inline-block;
-  font-size: 30px;
-  padding: 10px;
-  text-transform: lowercase;
-}
-*/
+
+

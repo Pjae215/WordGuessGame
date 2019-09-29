@@ -1,23 +1,88 @@
 
-// letter and word choices
+var wordsArray = ["britney", "selena","lady gaga", "nicki minaj","blueface", "pitbull", "bob dylan", "john legend", "michael jackson", "pink", "chris brown", "rihanna", "adele"];
 
-var letterchoice = ["abcdefghijklmnopqrstuvwxyz"].split("");
-    
-var wordList = ["britney", "selena", "bob dylan", "john legend", "michael jackson", "pink", "chris brown", "rihanna", "adele"];
+var winCountElem = document.getElementById("win-count");
+var currentWordElem = document.getElementById("current-word");
+var guessCountElem = document.getElementById("guess-count");
+var lettersGuessedElem = document.getElementById("wrong-guesses");
 
-// User starts with a score of 0.
- var score = 0;
+var randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].toLowerCase();
+var allLettersGuessed = [];
+var maxAttempts = 10;
+var guessCount = 0;
+var guessesRemaining = maxAttempts - guessCount;
+var wordComplete = false;
+var winCount = 0;
 
-// Assigning name to user entry and converting it to match list format
-var usertext = ".guessLetter"
-var userGuessLower = usertext.toLowerCase();
+function renderWord() {
+	var html = "";
+	for(var i = 0; i < randomWord.length; i++) {
+        if(allLettersGuessed.indexOf(randomWord[i]) !== -1 || randomWord[i] === " ") {
+			html += randomWord[i].toUpperCase();
+        } 
+        else {
+			html += "_";
+		}
+	}
+	currentWordElem.innerHTML = html;
+}
 
+function clearWordAndGuesses() {
+	guessCountElem.innerHTML = maxAttempts;
+	guessCount = 0;
+	guessesRemaining = maxAttempts - guessCount;
+	allLettersGuessed = [];
+    lettersGuessedElem.innerHTML = "";
+}
 
-document.getElementById("button").addEventListener("click", function(){ document.getElementById("entry").innerHTML = "usertext"
-});
+renderWord();
+winCountElem.innerHTML = winCount;
+guessCountElem.innerHTML = guessesRemaining;
 
+document.onkeydown = function(e) {
+	var theKey = e.key.toLowerCase();
+	var theKeyCode = e.keyCode;
 
-    /* User enters one letter, if the letter is in the first word then the user gets a prompt that says its a match and score +10 , if not then say guess again and score -5, need to display letters that are chosen and matched or unmatched,need to tally score and need to reset all and repeat process with next word */
+	if(theKeyCode >= 65 && theKeyCode <= 90 && allLettersGuessed.indexOf(theKey) === -1){
+		allLettersGuessed.push(theKey);
 
+		if(randomWord.indexOf(theKey) === -1) {
+			guessCount++;
+		}
 
-  
+		guessesRemaining = maxAttempts - guessCount;
+
+		if(guessesRemaining === 0) {
+			clearWordAndGuesses();
+			randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].toLowerCase();
+        } 
+        
+        else {
+			guessCountElem.innerHTML = guessesRemaining;
+		}
+
+        var html = "";
+        for(var i = 0; i < allLettersGuessed.length; i++) {
+			if(randomWord.indexOf(allLettersGuessed[i]) === -1) {
+				html += allLettersGuessed[i].toUpperCase();
+			}
+        }
+        
+        lettersGuessedElem.innerHTML = html;
+        renderWord();
+
+		var renderedWord = document.getElementById("current-word").innerHTML;
+		if(renderedWord.indexOf("_") === -1) {
+			wordComplete = true;
+		}
+	}
+
+	if(wordComplete) {
+		wordComplete = false;
+		winCount++;
+		winCountElem.innerHTML = winCount;
+		clearWordAndGuesses();
+		randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].toLowerCase();
+        renderWord();
+    }
+}

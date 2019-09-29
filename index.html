@@ -7,28 +7,38 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-        <header><strong>WORD GUESS GAME</strong></header>
-       <hr>
-      <br>
-  <div id ="wrapper">
-    <div class= "right" id="guessForm"><form>
-        <input type="text" class="guessLetter" maxlength="1"  placeholder="Enter a letter . . ."/> 
-        <button type="submit" class="Button" id="button">Guess</button>
-        <button type="reset" class="Button" id="button">Restart</button></form></div>
-    <h1 class = "right"> Hint: Names of Music Artists</h1>
-    
-    <img class= "left" src ="https://assetstorev1-prd-cdn.unity3d.com/key-image/8fb98eec-43ce-4024-ba26-918d4b24b779.jpg"/> </div>
-  </div>
-
-
-
+        
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid" style = "background-color:navy ; text-align:center">
+  <div class="container" id= "jumbo">
+    <header><strong>WORD GUESS GAME</strong></header>
     <br>
+    </div></div>
 
-    <!-- <p class="right"   id="entry"></p>
-    <div class="right" id="wrong"></div>
-    <div class="right" id="wrongLetters"></div>
-    <div class="right" id="correct"></div>
-    <div class="right" id="correctLetters"></div>  -->
+<!-- Game Area -->
+      
+  <div class="container">
+      <div class="row">
+  
+<!-- Picture Area -->
+<div class="col-md-5 panel-heading"><h2>Guess the Name of the Artist</h2>
+  <br>
+      <img style = "float:left" src="https://nrg91.gr/wp-content/uploads/2017/07/Billboard-Music-Artists.jpg" id="musicartists" alt="music artists">
+      </div>
+
+<!-- Play Area -->
+<div class="col-md-6 panel-heading" style = "text-align:center; padding-top:1em"><h3>Press any letter to play</h3>
+  <br>
+              <h3><span id="current-word" class="letters"></span></h3>
+              <br>
+              <h3>Guesses Remaining: <span id="guess-count"></span></h3>
+              <h3>Guessed Letters: <span id="wrong-guesses" class="letters"></span></h3>
+              <h3>WINS: <span id="win-count"></span></h3>
+          </div>
+      </div>
+
+  </div>
+      
     
     <script src="assets/javascript/game.js"> </script>
 
